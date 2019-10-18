@@ -1,0 +1,15 @@
+<li>
+              <h2 class="news-title">『<%= blog.title %>』</h2>
+              <% if blog.image != "" %>
+                <p><img src="<%= blog.image %>">
+                <%= link_to '詳細', "show/#{blog.id}" %>
+                <%= link_to '編集', "edit/#{blog.id}"  %>
+                <%= link_to '削除', "destroy/#{blog.id}", method: :delete %>
+                
+                </p>
+              <% end %>
+              <h5 class="main-text"><%= blog.content %></h5>
+              <p><%= blog.created_at %></p>
+              <br/>
+              <div class="line"></div>
+            </li>

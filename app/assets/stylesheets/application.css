@@ -1,0 +1,50 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ body{
+  
+   background-image: url(data:image/jpeg;base64,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);
+ }
+
+ .brand-logo{
+   position: relative;
+   bottom: 65px;
+   left:45%;
+ }
+
+ .news-title{
+   color: green;
+   font-family: monospace;
+ }
+
+ .line{
+   width: 100%;
+   height: 3px;
+   background-color:cornflowerblue;
+ }
+
+ .main-text{
+  word-wrap: break-word;
+  width: 50%;
+}
+
+input::placeholder{
+  color: rgb(158, 155, 155);
+}
+
+textarea::placeholder{
+  color: rgb(158, 155, 155);;
+}

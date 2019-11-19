@@ -1,0 +1,13 @@
+%li
+  %h2.news-title
+    『#{blog.title}』
+  - if blog.image != ""
+    %p
+      %img{:src => "#{blog.image}"}/
+      = link_to '詳細', "show/#{blog.id}"
+      = link_to '編集', "edit/#{blog.id}"
+      = link_to '削除', "destroy/#{blog.id}", method: :delete
+  %h5.main-text= blog.content
+  %p= blog.created_at
+  %br/
+  .line

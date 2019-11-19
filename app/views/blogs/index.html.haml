@@ -1,0 +1,9 @@
+%nav.blue.darken-2
+  = link_to "新規投稿", "/new"
+  .nav-wrapper
+    %h4.brand-logo Ito Blog
+    %ul#nav-mobile.right.hide-on-med-and-down
+%ul.list_article
+  - @blog.each do |blog|
+    = render partial: "blog", locals: { blog: blog }
+%script{:src => "./app.js", :type => "text/javascript"}

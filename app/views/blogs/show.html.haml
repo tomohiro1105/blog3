@@ -1,0 +1,12 @@
+%nav.blue.darken-2
+  = link_to "一覧に戻る", "/"
+  .nav-wrapper
+    %h4.brand-logo Ito Blog
+    %ul#nav-mobile.right.hide-on-med-and-down
+%div
+  %h2.news-title
+    『#{@id.title}』
+  %p
+    %img{:src => "#{@id.image}"}/
+  %p.main-text= @id.content
+  %p= @id.created_at

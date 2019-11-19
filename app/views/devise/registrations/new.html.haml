@@ -1,0 +1,30 @@
+%h2 Sign up
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = render "devise/shared/error_messages", resource: resource
+  .field
+    = f.label :ニックネーム
+    %em
+    %br/
+    = f.text_field :nickname, autofocus: true
+  .field
+    = f.label :Eメール
+    %br/
+    = f.email_field :email, autofocus: true, autocomplete: "email"
+  .field
+    = f.label :パスワード
+    - if @minimum_password_length
+      %em
+        (#{@minimum_password_length}文字以上(半角))
+    %br/
+    = f.password_field :password, autocomplete: "new-password"
+  .field
+    = f.label :もう一度パスワードを入力してください
+    %br/
+    = f.password_field :password_confirmation, autocomplete: "new-password"
+  .actions
+    = f.submit "Sign up"
+  .link
+    = link_to("FB", "#", class: "link")
+= render "devise/shared/links"
+
+

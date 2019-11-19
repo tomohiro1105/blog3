@@ -1,0 +1,29 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title blog
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %style{:href => "./style.css", :type => "text/css"}
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    / Compiled and minified CSS
+    %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css", :rel => "stylesheet"}/
+    / Compiled and minified JavaScript
+    %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"}
+    %script{:crossorigin => "anonymous", :integrity => "sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=", :src => "https://code.jquery.com/jquery-3.4.1.js"}
+  %body
+    - if user_signed_in?
+      %p.name
+        ユーザー：#{current_user.nickname}さん
+      %ul.nav
+        %li
+          %a{:href => "/new"} 新規投稿
+        %li= link_to "ログアウト", destroy_user_session_path, method: :delete
+    - else
+      %ul.nav
+        %li= link_to "ログイン", new_user_session_path, class: 'post'
+        %li= link_to "新規登録", new_user_registration_path, class: 'post'
+    = yield

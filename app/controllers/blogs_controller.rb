@@ -5,7 +5,6 @@ class BlogsController < ApplicationController
   end
 
   def new
-    
   end
 
   def create
@@ -18,7 +17,7 @@ class BlogsController < ApplicationController
 
   def destroy
     @des = Blog.find_by(id: params[:id])
-    @des.destroy 
+    @des.destroy
   end
 
   def edit
